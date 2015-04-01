@@ -20,6 +20,7 @@ namespace ConsoleApplication1
             Console.WriteLine("Recursion :"+recursive(digit));
             Console.WriteLine("Iteration :" + iteration(digit));
             Console.ReadKey(); // wait for user interaction to end program
+
         }
         static int recursive(int digit) // recursive version of function
         {
