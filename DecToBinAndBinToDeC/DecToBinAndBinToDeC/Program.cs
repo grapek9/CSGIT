@@ -20,16 +20,22 @@ namespace DecToBinAndBinToDeC
                 switch (caseSwitch)
                 {
                     case 1:
+                        Console.Clear();
                         translation.DecToBin();
                         break;
                     case 2:
+                        Console.Clear();
                         translation.BinToDec();
                         break;
                     case 3:
                         Console.Clear();
                         break;
+                    default:
+                        Console.WriteLine("Wrong Input");
+                        break;
                 }
-                Console.WriteLine("If you wish to exit program type exit");
+                
+                Console.WriteLine("\nIf you wish to exit program type exit,otherwise hit enter");
                 loopControl=Console.ReadLine();
             }while(String.Compare(loopControl,"exit",true)!=0);
         }
