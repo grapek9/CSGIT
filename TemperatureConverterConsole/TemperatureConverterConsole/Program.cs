@@ -11,21 +11,40 @@ namespace TemperatureConverterConsole
         static void Main(string[] args)
         {
             double temperature=0;
+            int loop = 0;
             Console.WriteLine("Welcome To Temperature converter");
             string input;
-            Console.WriteLine("Input Celsius");
-            input= Console.ReadLine();
-            Double.TryParse(input, out temperature);
-            Console.WriteLine(temperature);
-            
-            Console.WriteLine("Celsius degres:"+temperature);
-            Console.WriteLine("Kelvin degres:" + (temperature+273.15));
-           // temperature=(temperature-32);
-           // float temp = 5 / 9;
-           // temperature = temperature * temp;
-            //Console.WriteLine("Fahrenheit degres:" + ((temperature - 32) * (5 / 9)));
-          //  Console.WriteLine("Fahrenheit degres:" + temperature+" "+temp);
-            Console.ReadKey();
+            do{
+                Console.WriteLine("Type base notation");
+                Console.WriteLine("0) Exit, 1)Celsius, 2)Kelvin, 3)Fahrenheit");
+                input = Console.ReadLine();
+                Int32.TryParse(input, out loop);
+                switch(loop){
+                    case 0:
+                        break;
+                    case 1:
+                        Console.WriteLine("Input Celsius degrees");
+                        input = Console.ReadLine();
+                        Double.TryParse(input, out temperature);
+                        display.celsius(temperature);
+                        break;
+                    case 2:
+                        Console.WriteLine("Input Kelvin degrees");
+                        input = Console.ReadLine();
+                        Double.TryParse(input, out temperature);
+                        display.kelvin(temperature);
+                        break;
+                    case 3:
+                        Console.WriteLine("Input Fahrenheit degrees");
+                        input = Console.ReadLine();
+                        Double.TryParse(input, out temperature);
+                        display.fahrenheit(temperature);
+                        break;
+                    default:
+                        Console.WriteLine("It's "+ input+" not an option");
+                        break;
+                }
+            }while(loop != 0);
         }
     }
 }
