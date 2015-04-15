@@ -28,7 +28,8 @@ namespace BasicTypes
                                 Console.Clear();
                                 break;
                             case 2:
-                                
+                                Console.Clear();
+                                NumTypes.display();
                                 break;
                             case 3:
 
